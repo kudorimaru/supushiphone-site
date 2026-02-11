@@ -49,23 +49,34 @@ export async function getPosts(params: {
     searchParams.set('categories', categories.join(','));
   }
 
-  const res = await fetch(`${API_BASE}/posts?${searchParams}`);
-  if (!res.ok) {
+  try {
+    const res = await fetch(`${API_BASE}/posts?${searchParams}`);
+    if (!res.ok) return { posts: [], totalPages: 0 };
+
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) return { posts: [], totalPages: 0 };
+
+    const posts: WPPost[] = await res.json();
+    const totalPages = Number(res.headers.get('X-WP-TotalPages') || 1);
+    return { posts, totalPages };
+  } catch {
     return { posts: [], totalPages: 0 };
   }
-
-  const posts: WPPost[] = await res.json();
-  const totalPages = Number(res.headers.get('X-WP-TotalPages') || 1);
-
-  return { posts, totalPages };
 }
 
 export async function getPostBySlug(slug: string): Promise<WPPost | null> {
-  const res = await fetch(`${API_BASE}/posts?slug=${slug}&_embed=true`);
-  if (!res.ok) return null;
+  try {
+    const res = await fetch(`${API_BASE}/posts?slug=${slug}&_embed=true`);
+    if (!res.ok) return null;
 
-  const posts: WPPost[] = await res.json();
-  return posts[0] || null;
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) return null;
+
+    const posts: WPPost[] = await res.json();
+    return posts[0] || null;
+  } catch {
+    return null;
+  }
 }
 
 export async function getAllSlugs(): Promise<string[]> {
@@ -74,24 +85,39 @@ export async function getAllSlugs(): Promise<string[]> {
   let hasMore = true;
 
   while (hasMore) {
-    const res = await fetch(`${API_BASE}/posts?per_page=100&page=${page}&_fields=slug`);
-    if (!res.ok) break;
+    try {
+      const res = await fetch(`${API_BASE}/posts?per_page=100&page=${page}&_fields=slug`);
+      if (!res.ok) break;
 
-    const posts: Array<{ slug: string }> = await res.json();
-    slugs.push(...posts.map((p) => p.slug));
+      const contentType = res.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) break;
 
-    const totalPages = Number(res.headers.get('X-WP-TotalPages') || 1);
-    hasMore = page < totalPages;
-    page++;
+      const posts: Array<{ slug: string }> = await res.json();
+      slugs.push(...posts.map((p) => p.slug));
+
+      const totalPages = Number(res.headers.get('X-WP-TotalPages') || 1);
+      hasMore = page < totalPages;
+      page++;
+    } catch {
+      break;
+    }
   }
 
   return slugs;
 }
 
 export async function getCategories(): Promise<WPCategory[]> {
-  const res = await fetch(`${API_BASE}/categories?per_page=100&hide_empty=true`);
-  if (!res.ok) return [];
-  return res.json();
+  try {
+    const res = await fetch(`${API_BASE}/categories?per_page=100&hide_empty=true`);
+    if (!res.ok) return [];
+
+    const contentType = res.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) return [];
+
+    return res.json();
+  } catch {
+    return [];
+  }
 }
 
 export function getFeaturedImageUrl(post: WPPost): string | null {
