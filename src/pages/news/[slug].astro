@@ -1,0 +1,401 @@
+---
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getAllSlugs, getPostBySlug, getFeaturedImageUrl, getCategoryNames, formatDate, stripHtml } from '../../lib/wordpress';
+
+export async function getStaticPaths() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const post = await getPostBySlug(slug!);
+if (!post) return Astro.redirect('/news/');
+
+const featuredImage = getFeaturedImageUrl(post);
+const categoryNames = getCategoryNames(post);
+const plainTitle = stripHtml(post.title.rendered);
+---
+
+<Base title={`${plainTitle} - スプシフォン`} description={stripHtml(post.excerpt.rendered).slice(0, 160)} ogImage={featuredImage || undefined}>
+  <Header />
+
+  <article class="article-page">
+    <div class="article-inner">
+      <!-- Category Badges -->
+      {categoryNames.length > 0 && (
+        <div class="article-categories">
+          {categoryNames.map((name) => (
+            <span class="article-badge">{name}</span>
+          ))}
+        </div>
+      )}
+
+      <!-- Title -->
+      <h1 class="article-title" set:html={post.title.rendered} />
+
+      <!-- Date -->
+      <time class="article-date" datetime={post.date}>{formatDate(post.date)}</time>
+
+      <!-- Featured Image -->
+      {featuredImage && (
+        <div class="article-featured-image">
+          <img src={featuredImage} alt={plainTitle} />
+        </div>
+      )}
+
+      <!-- Content -->
+      <div class="article-content">
+        <Fragment set:html={post.content.rendered} />
+      </div>
+
+      <!-- Back Link -->
+      <div class="article-back">
+        <a href="/news/" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          お知らせ一覧に戻る
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Base>
+
+<style>
+  /* ==================== Article Layout ==================== */
+  .article-page {
+    padding-top: 72px;
+    background: var(--white);
+  }
+
+  .article-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  .article-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .article-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    background: rgba(46, 189, 89, 0.08);
+    color: var(--green);
+    border: 1px solid rgba(46, 189, 89, 0.15);
+  }
+
+  .article-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--slate-900);
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .article-date {
+    display: block;
+    font-family: var(--font-en);
+    font-size: 14px;
+    color: var(--slate-400);
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+
+  .article-featured-image {
+    margin-bottom: 40px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .article-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ==================== Back Link ==================== */
+  .article-back {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--slate-200);
+    text-align: center;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--slate-500);
+    padding: 12px 28px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--slate-200);
+    transition: all 0.3s ease;
+  }
+
+  .back-link:hover {
+    color: var(--slate-900);
+    border-color: var(--slate-300);
+    background: var(--slate-50);
+  }
+
+  /* ==================== Responsive ==================== */
+  @media (max-width: 768px) {
+    .article-inner {
+      padding: 40px 20px 64px;
+    }
+
+    .article-title {
+      font-size: 24px;
+    }
+
+    .article-date {
+      margin-bottom: 24px;
+    }
+
+    .article-featured-image {
+      margin-bottom: 32px;
+      border-radius: var(--radius-md);
+    }
+  }
+</style>
+
+<!-- WordPress content styles (must be global since HTML is injected) -->
+<style is:global>
+  .article-content {
+    font-size: 16px;
+    color: var(--slate-700);
+    line-height: 1.9;
+  }
+
+  .article-content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-top: 48px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--slate-100);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+
+  .article-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--slate-900);
+    margin-top: 36px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .article-content h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--slate-800);
+    margin-top: 28px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .article-content p {
+    margin-bottom: 20px;
+  }
+
+  .article-content a {
+    color: var(--green);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.3s ease;
+  }
+
+  .article-content a:hover {
+    color: var(--blue);
+  }
+
+  .article-content ul,
+  .article-content ol {
+    margin-bottom: 20px;
+    padding-left: 24px;
+  }
+
+  .article-content li {
+    margin-bottom: 8px;
+    line-height: 1.8;
+  }
+
+  .article-content li::marker {
+    color: var(--slate-400);
+  }
+
+  .article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin: 24px 0;
+  }
+
+  .article-content blockquote {
+    margin: 24px 0;
+    padding: 20px 24px;
+    border-left: 4px solid var(--green);
+    background: var(--slate-50);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--slate-600);
+    font-style: italic;
+  }
+
+  .article-content blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  .article-content pre {
+    margin: 24px 0;
+    padding: 20px 24px;
+    background: var(--slate-900);
+    color: var(--slate-100);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: 'Menlo', 'Consolas', 'Monaco', monospace;
+  }
+
+  .article-content code {
+    font-family: 'Menlo', 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    background: var(--slate-100);
+    color: var(--slate-700);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .article-content pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+  }
+
+  .article-content table {
+    width: 100%;
+    margin: 24px 0;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+
+  .article-content th,
+  .article-content td {
+    padding: 12px 16px;
+    border: 1px solid var(--slate-200);
+    text-align: left;
+    line-height: 1.6;
+  }
+
+  .article-content th {
+    background: var(--slate-50);
+    font-weight: 600;
+    color: var(--slate-700);
+  }
+
+  .article-content hr {
+    border: none;
+    height: 1px;
+    background: var(--slate-200);
+    margin: 40px 0;
+  }
+
+  .article-content figure {
+    margin: 24px 0;
+  }
+
+  .article-content figcaption {
+    font-size: 13px;
+    color: var(--slate-400);
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* WordPress specific classes */
+  .article-content .wp-block-image {
+    margin: 24px 0;
+  }
+
+  .article-content .wp-block-image img {
+    border-radius: var(--radius-md);
+  }
+
+  .article-content .wp-block-image figcaption {
+    font-size: 13px;
+    color: var(--slate-400);
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .article-content .aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .article-content .alignleft {
+    float: left;
+    margin-right: 24px;
+    margin-bottom: 12px;
+  }
+
+  .article-content .alignright {
+    float: right;
+    margin-left: 24px;
+    margin-bottom: 12px;
+  }
+
+  .article-content iframe {
+    max-width: 100%;
+    margin: 24px 0;
+    border-radius: var(--radius-md);
+  }
+
+  .article-content .wp-block-embed {
+    margin: 24px 0;
+  }
+
+  @media (max-width: 768px) {
+    .article-content h2 {
+      font-size: 20px;
+      margin-top: 36px;
+    }
+
+    .article-content h3 {
+      font-size: 18px;
+      margin-top: 28px;
+    }
+
+    .article-content pre {
+      padding: 16px;
+      font-size: 13px;
+    }
+
+    .article-content .alignleft,
+    .article-content .alignright {
+      float: none;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+</style>

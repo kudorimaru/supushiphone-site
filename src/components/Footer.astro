@@ -1,0 +1,88 @@
+---
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-company"><a href="https://craval.jp/" target="_blank" rel="noopener noreferrer">株式会社Craval</a></div>
+    <div class="footer-links">
+      <a href="/privacy-policy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/tokushoho/">特定商取引法に基づく表記</a>
+    </div>
+    <div class="footer-copyright">&copy; {new Date().getFullYear()} Craval Inc. All rights reserved.</div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 40px 24px;
+    background: var(--slate-900);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-company {
+    font-size: 14px;
+    color: var(--slate-500);
+    font-weight: 500;
+  }
+
+  .footer-company a {
+    color: var(--slate-500);
+    transition: color 0.3s ease;
+  }
+
+  .footer-company a:hover {
+    color: var(--slate-300);
+  }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--slate-500);
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--slate-300);
+  }
+
+  .footer-copyright {
+    width: 100%;
+    text-align: center;
+    padding-top: 24px;
+    margin-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 12px;
+    color: var(--slate-600);
+    font-family: var(--font-en);
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .footer-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+</style>

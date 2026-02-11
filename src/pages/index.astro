@@ -1,0 +1,541 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="スプシフォン - スプレッドシート×Zoom Phoneで架電業務を効率化">
+  <Header />
+
+  <!-- ==================== Hero ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge fade-in">
+        <span class="hero-badge-dot"></span>
+        ベータ版公開中
+      </div>
+      <h1 class="fade-in fade-in-delay-1">
+        スプレッドシート × <span style="white-space:nowrap">Zoom Phoneで</span><br><span class="gradient-text">架電業務を効率化</span>
+      </h1>
+      <p class="hero-sub fade-in fade-in-delay-2">
+        架電担当者は電話をかけ続けるだけ。結果は自動記録。<br>コール数が1.5〜2倍に。
+      </p>
+      <div class="hero-actions fade-in fade-in-delay-3">
+        <a href="#cta" class="btn-primary">
+          無料トライアルを申し込む
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#problems" class="btn-secondary-link">
+          詳しく見る <span class="arrow">&darr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Problems ==================== -->
+  <section class="problems" id="problems">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label fade-in">Problems</span>
+        <h2 class="section-title fade-in fade-in-delay-1">こんなお悩みありませんか？</h2>
+      </div>
+      <div class="problems-grid">
+        <div class="problem-card fade-in fade-in-delay-1">
+          <div class="problem-icon">&#9201;</div>
+          <h3>電話番号をコピペして<br>結果を手入力</h3>
+          <p>1件ごとに番号をコピーして貼り付け、通話後はスプレッドシートに戻って結果を入力。この繰り返しが架電効率を大きく下げています。</p>
+        </div>
+        <div class="problem-card fade-in fade-in-delay-2">
+          <div class="problem-icon">&#9888;&#65039;</div>
+          <h3>入力漏れ・ミスが<br>多い</h3>
+          <p>手入力だから記録漏れや誤入力が頻発。正確なデータが残らず、改善のための分析ができません。</p>
+        </div>
+        <div class="problem-card fade-in fade-in-delay-3">
+          <div class="problem-icon">&#128202;</div>
+          <h3>架電結果が集約されず<br>分析が難しい</h3>
+          <p>データがバラバラで一元管理できない。チーム全体の架電状況が見えず、効果的なマネジメントができません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Solution ==================== -->
+  <section class="solution" id="solution">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label fade-in">Solution</span>
+        <h2 class="section-title fade-in fade-in-delay-1">スプシフォンなら、すべて解決</h2>
+      </div>
+
+      <div class="before-after fade-in">
+        <div class="ba-card before">
+          <span class="ba-label">BEFORE</span>
+          <ol class="ba-steps">
+            <li>スプシで番号を確認</li>
+            <li>番号をコピー</li>
+            <li>Zoom Phoneに貼り付け</li>
+            <li>通話する</li>
+            <li>スプシに戻って結果入力</li>
+            <li>次の架電先へ移動</li>
+          </ol>
+          <div class="ba-step-count">6ステップ / 1コール</div>
+        </div>
+        <div class="ba-arrow">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M12 24h24M30 18l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ba-card after">
+          <span class="ba-label">AFTER</span>
+          <ol class="ba-steps">
+            <li>スプシフォンでクリック発信</li>
+            <li>通話する</li>
+            <li>結果を登録して次へ</li>
+          </ol>
+          <div class="ba-step-count">3ステップ / 1コール</div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card fade-in fade-in-delay-1">
+          <div class="stat-number">&yen;0</div>
+          <div class="stat-unit">移行コストゼロ</div>
+          <div class="stat-desc">既存の環境でそのまま活用可能。新しいツールへの移行は不要です。</div>
+        </div>
+        <div class="stat-card fade-in fade-in-delay-2">
+          <div class="stat-number">&yen;0</div>
+          <div class="stat-unit">初期費用ゼロ</div>
+          <div class="stat-desc">導入にかかる費用は一切なし。すぐに始められます。</div>
+        </div>
+        <div class="stat-card fade-in fade-in-delay-3">
+          <div class="stat-number">&yen;2~</div>
+          <div class="stat-unit">従量制で1コールから</div>
+          <div class="stat-desc">1コール2円からの従量制。使った分だけのお支払いです。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Features ==================== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label fade-in">Features</span>
+        <h2 class="section-title fade-in fade-in-delay-1">主な機能</h2>
+        <p class="section-subtitle fade-in fade-in-delay-2">使い慣れたスプレッドシートをそのまま。<br>架電に必要な機能をシンプルに追加します。</p>
+      </div>
+      <div class="features-grid features-grid-4">
+        <div class="feature-card fade-in fade-in-delay-1">
+          <div class="feature-icon">&#128222;</div>
+          <h3>ワンクリック発信</h3>
+          <p>スプレッドシートの電話番号をクリックするだけで、Zoom Phoneから直接発信。コピー&ペーストは不要です。</p>
+        </div>
+        <div class="feature-card fade-in fade-in-delay-2">
+          <div class="feature-icon">&#128221;</div>
+          <h3>コール結果自動記録</h3>
+          <p>通話後の結果選択がそのままスプレッドシートに記録。手入力によるミスや漏れをなくします。</p>
+        </div>
+        <div class="feature-card fade-in fade-in-delay-3">
+          <div class="feature-icon">&#129302;</div>
+          <h3>AI要約</h3>
+          <p>通話内容をAIが自動で要約してスプレッドシートに記録。通話後のメモ作成が不要になります。</p>
+        </div>
+        <div class="feature-card fade-in fade-in-delay-4">
+          <div class="feature-icon">&#127908;</div>
+          <h3>録音連携</h3>
+          <p>通話録音がGoogle Driveに自動保存。振り返りやチーム教育にすぐに活用できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Pricing ==================== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label fade-in">Pricing</span>
+        <h2 class="section-title fade-in fade-in-delay-1">シンプルな料金プラン</h2>
+        <p class="section-subtitle fade-in fade-in-delay-2">初期費用0円・最低契約期間なし・利用人数無制限</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card fade-in fade-in-delay-1">
+          <div class="pricing-plan-name">エントリープラン</div>
+          <div class="pricing-price">
+            <span class="pricing-currency">&yen;</span>
+            <span class="pricing-amount">5,000</span>
+          </div>
+          <div class="pricing-period">月額（税抜）/ 1,000コール含む</div>
+          <ul class="pricing-features">
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>月間1,000コールまで</li>
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>5円 / コール</li>
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>ワンクリック発信</li>
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>結果自動記録</li>
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>利用人数無制限</li>
+          </ul>
+          <a href="#cta" class="pricing-btn pricing-btn-outline">まずは無料で試す</a>
+        </div>
+        <div class="pricing-card recommended fade-in fade-in-delay-2">
+          <span class="pricing-badge">おすすめ</span>
+          <div class="pricing-plan-name">チームプラン</div>
+          <div class="pricing-price">
+            <span class="pricing-currency">&yen;</span>
+            <span class="pricing-amount">15,000</span>
+          </div>
+          <div class="pricing-period">月額（税抜）/ 5,000コール含む</div>
+          <ul class="pricing-features">
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>月間5,000コールまで</li>
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>3円 / コール</li>
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全機能利用可能</li>
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI要約機能</li>
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>録音・Google Drive連携</li>
+            <li><svg viewBox="0 0 18 18" fill="none"><path d="M4 9l3.5 3.5L14 5" stroke="#2EBD59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>利用人数無制限</li>
+          </ul>
+          <a href="#cta" class="pricing-btn pricing-btn-primary">無料トライアルを申し込む</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label fade-in">FAQ</span>
+        <h2 class="section-title fade-in fade-in-delay-1">よくあるご質問</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item fade-in">
+          <button class="faq-question">
+            <span>導入にどのくらい時間がかかりますか？</span>
+            <span class="faq-question-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">最短即日でご利用いただけます。お使いのGoogleスプレッドシートとZoom Phoneアカウントがあれば、Chrome拡張機能をインストールするだけで準備完了です。複雑な設定や初期構築は必要ありません。</div></div>
+        </div>
+        <div class="faq-item fade-in fade-in-delay-1">
+          <button class="faq-question">
+            <span>既存のスプレッドシートは使えますか？</span>
+            <span class="faq-question-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">はい、お使いのスプレッドシートをそのままご利用いただけます。電話番号が入っている列を指定するだけで、すぐにワンクリック発信が可能になります。フォーマットの変更は不要です。</div></div>
+        </div>
+        <div class="faq-item fade-in fade-in-delay-2">
+          <button class="faq-question">
+            <span>複数人で同時に使えますか？</span>
+            <span class="faq-question-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">はい、同じスプレッドシートを複数人で共有して同時に使えます。各メンバーの架電状況はリアルタイムでスプレッドシートに反映されるため、重複架電も防げます。利用人数に制限はありません。</div></div>
+        </div>
+        <div class="faq-item fade-in fade-in-delay-3">
+          <button class="faq-question">
+            <span>無料トライアルはありますか？</span>
+            <span class="faq-question-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">はい、現在ベータ版を無料でお試しいただけます。お申し込み後、すぐにすべての機能をご利用いただけます。クレジットカードの登録も不要です。</div></div>
+        </div>
+        <div class="faq-item fade-in fade-in-delay-4">
+          <button class="faq-question">
+            <span>コール数を超えたらどうなりますか？</span>
+            <span class="faq-question-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">プランのコール数を超えた場合、自動的に1コールあたり2円の従量課金に切り替わります。サービスが止まることはありませんので、安心してご利用ください。</div></div>
+        </div>
+        <div class="faq-item fade-in fade-in-delay-5">
+          <button class="faq-question">
+            <span>解約はいつでもできますか？</span>
+            <span class="faq-question-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">はい、最低契約期間はなく、いつでも解約可能です。月末までにお申し出いただければ、翌月から課金は停止されます。解約手数料もかかりません。</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA Section ==================== -->
+  <section class="cta-section" id="cta">
+    <div class="cta-bg"></div>
+    <div class="cta-glow-1"></div>
+    <div class="cta-glow-2"></div>
+    <div class="cta-content">
+      <h2 class="fade-in">まずは無料でお試しください</h2>
+      <p class="fade-in fade-in-delay-1">ベータ版を無料でお試しいただけます。<br>最短即日で利用開始。クレジットカード不要。</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSev4-fZh7Jj7tZqj_Oct89YKfDLgwv8mpI-r0U2BjO5ydEMqw/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary fade-in fade-in-delay-2">
+        無料トライアルを申し込む
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Base>
+
+<style>
+  /* ==================== Animation Classes ==================== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .fade-in-delay-1 { transition-delay: 0.1s; }
+  .fade-in-delay-2 { transition-delay: 0.2s; }
+  .fade-in-delay-3 { transition-delay: 0.3s; }
+  .fade-in-delay-4 { transition-delay: 0.4s; }
+  .fade-in-delay-5 { transition-delay: 0.5s; }
+
+  /* ==================== Section Common ==================== */
+  .section-label {
+    font-family: var(--font-en); font-size: 13px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 12px; display: inline-block;
+  }
+  .section-title {
+    font-size: 40px; font-weight: 800; line-height: 1.4;
+    color: var(--slate-900); margin-bottom: 16px; letter-spacing: -0.02em;
+  }
+  .section-subtitle {
+    font-size: 18px; color: var(--slate-500); max-width: 680px; margin: 0 auto; line-height: 1.8;
+  }
+  .section-header { text-align: center; margin-bottom: 48px; }
+
+  /* ==================== Hero ==================== */
+  .hero {
+    position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: var(--dark); overflow: hidden; padding: 100px 24px 80px;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(46, 189, 89, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(46, 189, 89, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
+  }
+  .hero-glow { position: absolute; width: 600px; height: 600px; border-radius: 50%; filter: blur(120px); opacity: 0.15; pointer-events: none; }
+  .hero-glow-1 { top: -200px; left: -100px; background: var(--green); }
+  .hero-glow-2 { bottom: -200px; right: -100px; background: var(--blue); }
+  .hero-content { position: relative; z-index: 1; text-align: center; max-width: 900px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px;
+    border-radius: 100px; border: 1px solid rgba(46, 189, 89, 0.2); background: rgba(46, 189, 89, 0.06);
+    font-size: 13px; font-weight: 500; color: var(--green); margin-bottom: 32px;
+  }
+  .hero-badge-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.5); } }
+  .hero h1 { font-size: 58px; font-weight: 900; line-height: 1.3; color: var(--white); letter-spacing: -0.03em; margin-bottom: 24px; }
+  .hero h1 .gradient-text { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 20px; color: var(--slate-400); line-height: 1.8; margin-bottom: 40px; max-width: 640px; margin-left: auto; margin-right: auto; }
+  .hero-actions { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; border-radius: 12px;
+    background: var(--gradient); color: var(--white); font-size: 16px; font-weight: 700;
+    transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(46, 189, 89, 0.3); border: none; cursor: pointer;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(46, 189, 89, 0.4); background: var(--gradient-hover); }
+  .btn-secondary-link { font-size: 15px; color: var(--slate-400); font-weight: 500; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-secondary-link:hover { color: var(--slate-300); }
+  .btn-secondary-link .arrow { display: inline-block; animation: bounce-down 2s ease-in-out infinite; }
+  @keyframes bounce-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+
+  /* ==================== Problems ==================== */
+  .problems { padding: 80px 0; background: var(--white); }
+  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .problem-card { padding: 40px 32px; border-radius: var(--radius-lg); border: 1px solid var(--slate-200); transition: all 0.3s ease; background: var(--white); }
+  .problem-card:hover { border-color: var(--slate-300); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+  .problem-icon { width: 56px; height: 56px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 24px; background: var(--slate-50); }
+  .problem-card h3 { font-size: 20px; font-weight: 700; color: var(--slate-900); margin-bottom: 12px; line-height: 1.5; }
+  .problem-card p { font-size: 16px; color: var(--slate-500); line-height: 1.7; }
+
+  /* ==================== Solution ==================== */
+  .solution { padding: 80px 0; background: var(--slate-50); }
+  .before-after { display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px; align-items: center; margin-bottom: 56px; max-width: 960px; margin-left: auto; margin-right: auto; }
+  .ba-card { padding: 36px 32px; border-radius: var(--radius-lg); background: var(--white); border: 1px solid var(--slate-200); }
+  .ba-card.before { border-color: #FCA5A5; background: #FFF5F5; }
+  .ba-card.after { border-color: #86EFAC; background: #F0FFF4; }
+  .ba-label { font-family: var(--font-en); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; display: inline-block; padding: 4px 12px; border-radius: 4px; }
+  .before .ba-label { background: #FEE2E2; color: #DC2626; }
+  .after .ba-label { background: #DCFCE7; color: #16A34A; }
+  .ba-steps { list-style: none; counter-reset: step; }
+  .ba-steps li { counter-increment: step; padding: 10px 0; font-size: 14px; color: var(--slate-600); display: flex; align-items: center; gap: 12px; line-height: 1.5; }
+  .ba-steps li::before { content: counter(step); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; font-family: var(--font-en); }
+  .before .ba-steps li::before { background: #FEE2E2; color: #DC2626; }
+  .after .ba-steps li::before { background: #DCFCE7; color: #16A34A; }
+  .ba-step-count { font-size: 13px; font-weight: 600; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--slate-200); }
+  .before .ba-step-count { color: #DC2626; }
+  .after .ba-step-count { color: #16A34A; }
+  .ba-arrow { display: flex; align-items: center; justify-content: center; }
+  .ba-arrow svg { width: 48px; height: 48px; color: var(--slate-400); }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .stat-card { text-align: center; padding: 48px 32px; border-radius: var(--radius-lg); background: var(--white); border: 1px solid var(--slate-200); transition: all 0.3s ease; }
+  .stat-card:hover { border-color: transparent; box-shadow: var(--shadow-xl); transform: translateY(-4px); }
+  .stat-number { font-family: var(--font-en); font-size: 52px; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.1; margin-bottom: 8px; letter-spacing: -0.03em; }
+  .stat-unit { font-size: 16px; font-weight: 600; color: var(--slate-700); margin-bottom: 8px; }
+  .stat-desc { font-size: 14px; color: var(--slate-500); }
+
+  /* ==================== Features ==================== */
+  .features { padding: 80px 0; background: var(--white); }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .features-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .feature-card { padding: 40px 32px; border-radius: var(--radius-lg); border: 1px solid var(--slate-200); background: var(--white); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden; }
+  .feature-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient); transform: scaleX(0); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); transform-origin: left; }
+  .feature-card:hover::before { transform: scaleX(1); }
+  .feature-card:hover { border-color: var(--slate-300); box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+  .feature-icon { width: 56px; height: 56px; border-radius: var(--radius-md); background: var(--slate-50); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 24px; }
+  .feature-card h3 { font-size: 20px; font-weight: 700; color: var(--slate-900); margin-bottom: 12px; }
+  .feature-card p { font-size: 16px; color: var(--slate-500); line-height: 1.7; }
+
+  /* ==================== Pricing ==================== */
+  .pricing { padding: 80px 0; background: var(--slate-50); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 800px; margin: 0 auto; }
+  .pricing-card { padding: 48px 40px; border-radius: var(--radius-xl); background: var(--white); border: 1px solid var(--slate-200); position: relative; transition: all 0.3s ease; }
+  .pricing-card:hover { box-shadow: var(--shadow-xl); transform: translateY(-4px); }
+  .pricing-card.recommended { border: 2px solid transparent; background: linear-gradient(var(--white), var(--white)) padding-box, var(--gradient) border-box; box-shadow: var(--shadow-lg); }
+  .pricing-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); padding: 6px 20px; border-radius: 100px; background: var(--gradient); color: var(--white); font-size: 12px; font-weight: 700; letter-spacing: 0.5px; white-space: nowrap; }
+  .pricing-plan-name { font-size: 18px; font-weight: 700; color: var(--slate-900); margin-bottom: 8px; }
+  .pricing-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+  .pricing-currency { font-size: 18px; font-weight: 600; color: var(--slate-700); }
+  .pricing-amount { font-family: var(--font-en); font-size: 48px; font-weight: 800; color: var(--slate-900); letter-spacing: -0.03em; line-height: 1; }
+  .pricing-period { font-size: 15px; color: var(--slate-500); margin-bottom: 32px; }
+  .pricing-features { list-style: none; margin-bottom: 32px; }
+  .pricing-features li { padding: 10px 0; font-size: 15px; color: var(--slate-600); display: flex; align-items: center; gap: 12px; }
+  .pricing-features li svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .pricing-btn { display: block; width: 100%; padding: 14px 24px; border-radius: var(--radius-md); text-align: center; font-size: 15px; font-weight: 600; border: none; cursor: pointer; transition: all 0.3s ease; font-family: var(--font-ja); }
+  .pricing-btn-outline { background: var(--white); color: var(--slate-700); border: 1px solid var(--slate-300); }
+  .pricing-btn-outline:hover { border-color: var(--slate-400); background: var(--slate-50); }
+  .pricing-btn-primary { background: var(--gradient); color: var(--white); box-shadow: 0 4px 16px rgba(46, 189, 89, 0.3); }
+  .pricing-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(46, 189, 89, 0.4); background: var(--gradient-hover); }
+
+  /* ==================== FAQ ==================== */
+  .faq { padding: 80px 0; background: var(--white); }
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--slate-200); }
+  .faq-item:first-child { border-top: 1px solid var(--slate-200); }
+  .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 24px 0; background: none; border: none; cursor: pointer; text-align: left; font-size: 16px; font-weight: 600; color: var(--slate-900); font-family: var(--font-ja); line-height: 1.5; gap: 16px; transition: color 0.3s ease; }
+  .faq-question:hover { color: var(--slate-700); }
+  .faq-question-icon { width: 24px; height: 24px; border-radius: 50%; background: var(--slate-100); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s ease; }
+  .faq-question-icon svg { width: 14px; height: 14px; color: var(--slate-500); transition: transform 0.3s ease; }
+  .faq-item.open .faq-question-icon { background: var(--slate-900); }
+  .faq-item.open .faq-question-icon svg { color: var(--white); transform: rotate(45deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease; }
+  .faq-answer-inner { padding: 0 0 24px; font-size: 15px; color: var(--slate-500); line-height: 1.8; }
+
+  /* ==================== CTA Section ==================== */
+  .cta-section { padding: 80px 24px; background: var(--dark); position: relative; overflow: hidden; }
+  .cta-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(46, 189, 89, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(46, 189, 89, 0.04) 1px, transparent 1px); background-size: 48px 48px; mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%); }
+  .cta-glow-1 { position: absolute; width: 400px; height: 400px; background: var(--green); border-radius: 50%; filter: blur(150px); opacity: 0.08; top: -100px; right: -100px; }
+  .cta-glow-2 { position: absolute; width: 400px; height: 400px; background: var(--blue); border-radius: 50%; filter: blur(150px); opacity: 0.08; bottom: -100px; left: -100px; }
+  .cta-content { position: relative; z-index: 1; text-align: center; max-width: 600px; margin: 0 auto; }
+  .cta-section h2 { font-size: 36px; font-weight: 800; color: var(--white); margin-bottom: 16px; letter-spacing: -0.02em; }
+  .cta-section p { font-size: 17px; color: var(--slate-400); margin-bottom: 40px; line-height: 1.8; }
+
+  /* ==================== Responsive ==================== */
+  @media (max-width: 1024px) {
+    .hero h1 { font-size: 42px; }
+    .problems-grid { grid-template-columns: repeat(2, 1fr); }
+    .section-title { font-size: 30px; }
+  }
+  @media (max-width: 768px) {
+    .hero { padding: 100px 24px 80px; min-height: auto; }
+    .hero h1 { font-size: 32px; }
+    .hero-sub { font-size: 16px; }
+    .hero-badge { font-size: 12px; }
+    .problems-grid { grid-template-columns: 1fr; gap: 20px; }
+    .problem-card { padding: 32px 24px; }
+    .before-after { grid-template-columns: 1fr; gap: 16px; margin-bottom: 48px; }
+    .ba-arrow { transform: rotate(90deg); }
+    .ba-arrow svg { width: 36px; height: 36px; }
+    .stats-grid { grid-template-columns: 1fr; gap: 20px; }
+    .stat-card { padding: 36px 24px; }
+    .stat-number { font-size: 40px; }
+    .features-grid, .features-grid-4 { grid-template-columns: 1fr; gap: 16px; }
+    .feature-card { padding: 32px 24px; }
+    .pricing-grid { grid-template-columns: 1fr; gap: 20px; }
+    .pricing-card { padding: 36px 28px; }
+    .section-title { font-size: 26px; }
+    .section-subtitle { font-size: 15px; }
+    .cta-section h2 { font-size: 28px; }
+  }
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 26px; }
+    .btn-primary { width: 100%; justify-content: center; padding: 14px 24px; font-size: 15px; }
+    .pricing-amount { font-size: 40px; }
+    .section-header { margin-bottom: 40px; }
+  }
+</style>
+
+<script>
+  // Scroll animations
+  function revealElements() {
+    document.querySelectorAll('.fade-in:not(.visible)').forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 30 && rect.bottom > 0) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  revealElements();
+
+  let scrollTimer: ReturnType<typeof setTimeout> | null = null;
+  window.addEventListener('scroll', () => {
+    if (scrollTimer) return;
+    scrollTimer = setTimeout(() => {
+      scrollTimer = null;
+      revealElements();
+    }, 60);
+  }, { passive: true });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.01, rootMargin: '80px 0px 0px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach((el) => {
+      if (!el.classList.contains('visible')) observer.observe(el);
+    });
+  }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const answer = item?.querySelector('.faq-answer') as HTMLElement;
+      const isOpen = item?.classList.contains('open');
+
+      document.querySelectorAll('.faq-item').forEach((faqItem) => {
+        faqItem.classList.remove('open');
+        const a = faqItem.querySelector('.faq-answer') as HTMLElement;
+        if (a) a.style.maxHeight = '0';
+      });
+
+      if (!isOpen && item && answer) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = (anchor as HTMLAnchorElement).getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId!);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>

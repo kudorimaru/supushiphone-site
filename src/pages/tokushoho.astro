@@ -1,0 +1,298 @@
+---
+import Base from '../layouts/Base.astro';
+import HeaderLogo from '../components/HeaderLogo.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Base title="特定商取引法に基づく表記 - スプシフォン" description="スプシフォンの特定商取引法に基づく表記ページです。">
+  <header class="page-header">
+    <div class="page-header-inner">
+      <a href="/" class="page-header-logo" aria-label="スプシフォン トップページへ">
+        <HeaderLogo variant="dark" width={200} height={38} />
+      </a>
+      <a href="/" class="header-back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        トップページに戻る
+      </a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <h1 class="page-title">特定商取引法に基づく表記</h1>
+      <p class="page-subtitle">Act on Specified Commercial Transactions</p>
+
+      <table class="tokushoho-table">
+        <tbody>
+          <tr>
+            <th>事業者名</th>
+            <td>株式会社Craval（クラバル）</td>
+          </tr>
+          <tr>
+            <th>代表者</th>
+            <td>加藤 耀介</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>東京都新宿区高田馬場二丁目14番28号 青木ビル2階</td>
+          </tr>
+          <tr>
+            <th>電話番号</th>
+            <td>お問い合わせフォームよりご連絡ください</td>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <td><a href="mailto:info@craval.jp">info@craval.jp</a></td>
+          </tr>
+          <tr>
+            <th>URL</th>
+            <td><a href="https://craval.jp/" target="_blank" rel="noopener noreferrer">https://craval.jp/</a></td>
+          </tr>
+          <tr>
+            <th>サービス名</th>
+            <td>スプシフォン</td>
+          </tr>
+          <tr>
+            <th>販売価格</th>
+            <td>
+              エントリープラン：月額5,000円（税抜）<br>
+              チームプラン：月額15,000円（税抜）<br>
+              ※別途、プラン内コール数を超過した場合の従量課金が発生します。<br>
+              ※価格は税抜表示です。別途消費税がかかります。
+            </td>
+          </tr>
+          <tr>
+            <th>支払方法</th>
+            <td>クレジットカード、銀行振込</td>
+          </tr>
+          <tr>
+            <th>支払時期</th>
+            <td>月額プランは利用開始月より毎月のお支払いとなります。</td>
+          </tr>
+          <tr>
+            <th>サービス提供時期</th>
+            <td>お申し込み後、即日〜1営業日以内にご利用いただけます。</td>
+          </tr>
+          <tr>
+            <th>返品・キャンセル</th>
+            <td>デジタルサービスの性質上、返品はお受けしておりません。サービスの解約はいつでも可能で、解約手数料はかかりません。月末までにお申し出いただければ、翌月から課金は停止されます。</td>
+          </tr>
+          <tr>
+            <th>動作環境</th>
+            <td>
+              Google Chrome 最新版<br>
+              Googleスプレッドシート<br>
+              Zoom Phone アカウント
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="back-link-wrapper">
+        <a href="/" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          スプシフォン トップページに戻る
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+  /* ===== Header ===== */
+  .page-header {
+    background: var(--dark);
+    padding: 0 24px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .page-header-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-back {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--slate-400);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease;
+  }
+
+  .header-back:hover {
+    color: var(--slate-200);
+  }
+
+  /* ===== Main Content ===== */
+  .main {
+    padding: 64px 24px 80px;
+  }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .page-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--slate-900);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+    color: var(--slate-500);
+    margin-bottom: 48px;
+    font-family: var(--font-en);
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  /* ===== Table ===== */
+  .tokushoho-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--slate-200);
+  }
+
+  .tokushoho-table tr {
+    border-bottom: 1px solid var(--slate-100);
+  }
+
+  .tokushoho-table tr:last-child {
+    border-bottom: none;
+  }
+
+  .tokushoho-table th,
+  .tokushoho-table td {
+    padding: 20px 24px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .tokushoho-table th {
+    width: 200px;
+    background: var(--slate-50);
+    font-weight: 600;
+    color: var(--slate-700);
+    white-space: nowrap;
+    border-right: 1px solid var(--slate-200);
+  }
+
+  .tokushoho-table td {
+    color: var(--slate-600);
+  }
+
+  .tokushoho-table td a {
+    color: var(--blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .tokushoho-table td a:hover {
+    color: var(--green);
+  }
+
+  /* ===== Back Link ===== */
+  .back-link-wrapper {
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--slate-500);
+    padding: 12px 28px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--slate-200);
+    background: var(--white);
+    transition: all 0.3s ease;
+  }
+
+  .back-link:hover {
+    color: var(--slate-700);
+    border-color: var(--slate-300);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 22px;
+    }
+
+    .page-subtitle {
+      margin-bottom: 32px;
+    }
+
+    .tokushoho-table,
+    .tokushoho-table thead,
+    .tokushoho-table tbody,
+    .tokushoho-table tr,
+    .tokushoho-table th,
+    .tokushoho-table td {
+      display: block;
+      width: 100%;
+    }
+
+    .tokushoho-table tr {
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    .tokushoho-table th {
+      padding: 16px 20px 8px;
+      border-right: none;
+      border-bottom: none;
+      font-size: 13px;
+      color: var(--slate-500);
+      letter-spacing: 0.5px;
+    }
+
+    .tokushoho-table td {
+      padding: 0 20px 16px;
+      font-size: 15px;
+      color: var(--slate-800);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .main {
+      padding: 48px 16px 64px;
+    }
+
+    .page-title {
+      font-size: 20px;
+    }
+
+    .tokushoho-table th,
+    .tokushoho-table td {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+</style>

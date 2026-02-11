@@ -1,0 +1,44 @@
+---
+interface Props {
+  variant?: 'dark' | 'light';
+  width?: number;
+  height?: number;
+}
+
+const { variant = 'dark', width = 260, height = 50 } = Astro.props;
+const textFill = variant === 'dark' ? '#F1F5F9' : '#1E293B';
+const subFill = variant === 'dark' ? '#94A3B8' : '#64748B';
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width={width} height={height}>
+  <defs>
+    <linearGradient id="headerIconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2EBD59"/>
+      <stop offset="100%" stop-color="#2D8CFF"/>
+    </linearGradient>
+    <linearGradient id="headerCellGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34A853"/>
+      <stop offset="100%" stop-color="#2D8CFF"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(6, 6)">
+    <rect x="0" y="0" width="56" height="68" rx="7" ry="7" fill="none" stroke="url(#headerIconGrad)" stroke-width="2.5"/>
+    <rect x="1.2" y="1.2" width="53.6" height="16" rx="6" ry="6" fill="url(#headerIconGrad)" opacity="0.1"/>
+    <line x1="0" y1="17" x2="56" y2="17" stroke="url(#headerIconGrad)" stroke-width="1.2" opacity="0.4"/>
+    <line x1="0" y1="34" x2="56" y2="34" stroke="url(#headerIconGrad)" stroke-width="1.2" opacity="0.25"/>
+    <line x1="0" y1="51" x2="56" y2="51" stroke="url(#headerIconGrad)" stroke-width="1.2" opacity="0.25"/>
+    <line x1="18" y1="0" x2="18" y2="68" stroke="url(#headerIconGrad)" stroke-width="1.2" opacity="0.25"/>
+    <line x1="38" y1="0" x2="38" y2="68" stroke="url(#headerIconGrad)" stroke-width="1.2" opacity="0.25"/>
+    <g transform="translate(28, 43)">
+      <path d="M-18,8 C-18,8 -20,2 -20,-2 C-20,-6 -18,-8 -14,-8 L-10,-8 C-8,-8 -6,-6 -6,-4 L-6,0 C-6,2 -8,4 -10,4 C-12,4 -13,5 -12,7 C-10,11 -6,15 -2,18 C0,19 1,18 1,16 L1,12 C1,10 3,8 5,8 L9,8 C11,8 13,10 13,12 C13,16 11,20 7,20 C-3,20 -14,12 -18,8 Z" fill="url(#headerCellGrad)" transform="rotate(-20) scale(0.78)"/>
+    </g>
+    <circle cx="9" cy="8.5" r="2" fill="url(#headerIconGrad)" opacity="0.5"/>
+    <circle cx="28" cy="8.5" r="2" fill="url(#headerIconGrad)" opacity="0.5"/>
+    <circle cx="47" cy="8.5" r="2" fill="url(#headerIconGrad)" opacity="0.5"/>
+    <circle cx="9" cy="25.5" r="1.5" fill="url(#headerIconGrad)" opacity="0.3"/>
+    <circle cx="28" cy="25.5" r="1.5" fill="url(#headerIconGrad)" opacity="0.3"/>
+    <circle cx="47" cy="25.5" r="1.5" fill="url(#headerIconGrad)" opacity="0.3"/>
+  </g>
+  <text x="80" y="48" class="logo-text-main" font-family="'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic UI', sans-serif" font-size="38" font-weight="800" fill={textFill} letter-spacing="2">スプシフォン</text>
+  <text x="82" y="68" class="logo-text-sub" font-family="'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif" font-size="11" font-weight="500" fill={subFill} letter-spacing="4">SUPUSHI PHONE</text>
+</svg>

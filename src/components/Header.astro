@@ -1,0 +1,226 @@
+---
+import HeaderLogo from './HeaderLogo.astro';
+---
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="/" class="header-logo" aria-label="スプシフォン">
+      <HeaderLogo variant="dark" />
+    </a>
+    <nav class="header-nav">
+      <a href="/#features">機能</a>
+      <a href="/#pricing">料金</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/news/">お知らせ</a>
+      <a href="/#cta" class="header-cta">無料で始める</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="/#features" class="mobile-nav-link">機能</a>
+  <a href="/#pricing" class="mobile-nav-link">料金</a>
+  <a href="/#faq" class="mobile-nav-link">FAQ</a>
+  <a href="/news/" class="mobile-nav-link">お知らせ</a>
+  <a href="/#cta" class="mobile-cta">無料で始める</a>
+</div>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 24px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .header.scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .header-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-logo svg {
+    display: block;
+    transition: all 0.4s ease;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .header-nav a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--slate-400);
+    transition: color 0.3s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .header.scrolled .header-nav a {
+    color: var(--slate-600);
+  }
+
+  .header-nav a:hover {
+    color: var(--white);
+  }
+
+  .header.scrolled .header-nav a:hover {
+    color: var(--slate-900);
+  }
+
+  .header-cta {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+    background: var(--gradient);
+    color: var(--white) !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(46, 189, 89, 0.3);
+  }
+
+  .header-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(46, 189, 89, 0.4);
+    background: var(--gradient-hover);
+    color: var(--white) !important;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: relative;
+    width: 32px;
+    height: 32px;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--slate-400);
+    border-radius: 1px;
+    position: absolute;
+    left: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .header.scrolled .mobile-menu-btn span {
+    background: var(--slate-600);
+  }
+
+  .mobile-menu-btn span:nth-child(1) { top: 9px; }
+  .mobile-menu-btn span:nth-child(2) { top: 15px; }
+  .mobile-menu-btn span:nth-child(3) { top: 21px; }
+
+  .mobile-menu-btn.active span:nth-child(1) { top: 15px; transform: rotate(45deg); }
+  .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+  .mobile-menu-btn.active span:nth-child(3) { top: 15px; transform: rotate(-45deg); }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 24px;
+    border-bottom: 1px solid var(--slate-200);
+    box-shadow: var(--shadow-lg);
+    z-index: 999;
+  }
+
+  .mobile-nav.open { display: block; }
+
+  .mobile-nav a {
+    display: block;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--slate-700);
+    border-bottom: 1px solid var(--slate-100);
+  }
+
+  .mobile-nav a:last-child { border-bottom: none; }
+
+  .mobile-nav .mobile-cta {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    padding: 14px 24px;
+    background: var(--gradient);
+    color: var(--white);
+    border-radius: 8px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .header-nav { display: none; }
+    .mobile-menu-btn { display: block; }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('header');
+  const logoTextMain = header?.querySelector('.logo-text-main');
+  const logoTextSub = header?.querySelector('.logo-text-sub');
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+
+  function handleScroll() {
+    const scrollY = window.scrollY;
+    if (scrollY > 60) {
+      header?.classList.add('scrolled');
+      if (logoTextMain) logoTextMain.setAttribute('fill', '#1E293B');
+      if (logoTextSub) logoTextSub.setAttribute('fill', '#64748B');
+    } else {
+      header?.classList.remove('scrolled');
+      if (logoTextMain) logoTextMain.setAttribute('fill', '#F1F5F9');
+      if (logoTextSub) logoTextSub.setAttribute('fill', '#94A3B8');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenuBtn.classList.toggle('active');
+    mobileNav?.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenuBtn?.classList.remove('active');
+      mobileNav?.classList.remove('open');
+    });
+  });
+</script>
